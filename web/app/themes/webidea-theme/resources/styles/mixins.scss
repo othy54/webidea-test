@@ -1,0 +1,102 @@
+@import 'variables';
+@import '_breakpoints.scss';
+
+// Buttons
+
+@mixin button($color: white, $color-hover: $primary-500, $bg: $primary-500, $bg-hover: $primary-600, $arrow: false) {
+    color: $color;
+    background-color: $bg;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    font-size: 1.24rem;
+    font-weight: 700;
+    font-family: Rubik, sans-serif;
+    transition: background-color 0.3s;
+    width: fit-content;
+
+
+
+    &:hover {
+        background-color: $bg-hover;
+    }
+
+    &:active {
+        background-color: $bg;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background-color: $secondary-400;
+        color: $secondary-700;
+    }
+
+    // Si bouton link
+
+    @if $arrow {
+        padding: 0;
+        background-color: transparent;
+        transition: color 0.3s;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            background-color: $color;
+            -webkit-mask-image: url('../images/arrow.svg');
+            mask-image: url('../images/arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 16px;
+            aspect-ratio: 1;
+            margin-left: 11px;
+            transition: background-color 0.3s;
+        }
+
+        &:hover {
+            color: $color-hover;
+            background-color: transparent;
+
+            &::after {
+
+                background-color: $color-hover;
+
+            }
+        }
+
+        &:active {
+            color: $color;
+            background-color: transparent;
+
+            &::after {
+                background-color: $color;
+            }
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: transparent;
+
+            &:hover {
+                color: $color;
+
+                &::after {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(md) {
+        font-size: 1rem;
+    }
+}
+
+@mixin breakpoint($key) {
+    @media (max-width: #{breakpoint($key)}) {
+        @content;
+    }
+}

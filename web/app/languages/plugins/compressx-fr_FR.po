@@ -1,0 +1,134 @@
+# Translation of Plugins - AVIF, WebP Converter - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - AVIF, WebP Converter - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-08-14 09:35:13+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - AVIF, WebP Converter - Stable (latest release)\n"
+
+#: includes/display/class-compressx-system-info.php:623
+msgid "Unable to send email. Please check the configuration of email server."
+msgstr "Impossible d’envoyer l’e-mail. Veuillez vérifier la configuration du serveur d’e-mail."
+
+#: includes/display/class-compressx-system-info.php:544
+msgid "Please enter a valid email address."
+msgstr "Veuillez saisir une adresse e-mail valide."
+
+#: includes/display/class-compressx-system-info.php:536
+msgid "User's email address is required."
+msgstr "Une adresse e-mail du compte est nécessaire."
+
+#: includes/class-compressx-log.php:234
+#: includes/display/class-compressx-system-info.php:87
+msgid "Download"
+msgstr "Télécharger"
+
+#: includes/display/class-compressx-system-info.php:84
+msgid "Method 2."
+msgstr "Méthode 2."
+
+#: includes/display/class-compressx-system-info.php:80
+msgid "Send Debug Information to Us"
+msgstr "Nous envoyer les informations de débogage"
+
+#: includes/display/class-compressx-system-info.php:77
+msgid "Please describe your problem here."
+msgstr "Veuillez décrire ici votre problème."
+
+#: includes/display/class-compressx-system-info.php:72
+msgid "Your email:"
+msgstr "Votre e-mail :"
+
+#: includes/display/class-compressx-system-info.php:69
+msgid "CompressX support email:"
+msgstr "E-mail du support de CompressX :"
+
+#: includes/display/class-compressx-system-info.php:65
+msgid "Method 1."
+msgstr "Méthode 1."
+
+#: includes/display/class-compressx-system-info.php:62
+msgid "There are two ways available to send us the debug information. The first one is recommended."
+msgstr "Il y a deux façons de nous envoyer les informations de débogage. La première est recommandée."
+
+#: includes/display/class-compressx-system-info.php:84
+msgid "If you didn’t configure SMTP on your site, click the button below to download the relevant information (website info and error logs) to your PC when you are encountering some errors. Sending the files to us will help us diagnose what happened."
+msgstr "Si vous n’avez pas configuré un SMTP sur votre site, cliquez sur le bouton ci-dessous pour télécharger les informations pertinentes (informations sur le site et journaux d’erreurs) sur votre PC lorsque vous rencontrez des erreurs. L’envoi des fichiers nous aidera à diagnostiquer ce qui s’est passé."
+
+#: includes/display/class-compressx-system-info.php:65
+msgid "If you have configured SMTP on your site, enter your email address and click the button below to send us the relevant information (website info and errors logs) when you are encountering errors. This will help us figure out what happened. Once the issue is resolved, we will inform you by your email address."
+msgstr "Si vous avez configuré le SMTP sur votre site, saisissez votre adresse e-mail et cliquez sur le bouton ci-dessous pour nous envoyer les informations pertinentes (informations sur le site et journaux d’erreurs) lorsque vous rencontrez des erreurs. Cela nous aidera à comprendre ce qui s’est passé. Une fois le problème résolu, nous vous en informerons via votre adresse e-mail."
+
+#. Author of the plugin
+#: compressx.php
+msgid "WPvivid Team"
+msgstr "Équipe WPvivid"
+
+#: includes/class-compressx-manual-optimization.php:151
+#: includes/class-compressx-manual-optimization.php:655
+#: includes/display/class-compressx-custom-media-lib.php:141
+#: includes/display/class-compressx-custom-media-lib.php:354
+#: includes/display/class-compressx-custom-media-lib.php:434
+msgid "Thumbnails generated"
+msgstr "Miniatures générées"
+
+#: includes/class-compressx-log.php:160
+msgid "Actions"
+msgstr "Actions"
+
+#: includes/class-compressx-log.php:159
+msgid "Log Size"
+msgstr "Taille du journal"
+
+#: includes/class-compressx-log.php:158
+msgid "Log File Name"
+msgstr "Nom du fichier journal"
+
+#. Author URI of the plugin
+#: compressx.php
+msgid "https://compressx.io"
+msgstr "https://compressx.io"
+
+#. Description of the plugin
+#: compressx.php
+msgid "Convert JPG and PNG images to WebP and AVIF, compress WebP and AVIF."
+msgstr "Convertissez les images JPG et PNG en WebP et AVIF, compressez WebP et AVIF."
+
+#. Plugin Name of the plugin
+#: compressx.php includes/class-compressx-manual-optimization.php:47
+#: includes/class-compressx-manual-optimization.php:544
+#: includes/display/class-compressx-custom-media-lib.php:316
+msgid "CompressX"
+msgstr "CompressX"
+
+#: includes/display/class-compressx-custom-media-lib.php:176
+msgid "CompressX Filter"
+msgstr "Filtre CompressX"
+
+#: includes/display/class-compressx-custom-media-lib.php:182
+msgid "CompressX: Optimization Failed"
+msgstr "CompressX : échec de l’optimisation"
+
+#: includes/display/class-compressx-custom-media-lib.php:180
+msgid "CompressX: Optimized"
+msgstr "CompressX : optimisé"
+
+#: includes/class-compressx-manual-optimization.php:149
+#: includes/class-compressx-manual-optimization.php:150
+#: includes/class-compressx-manual-optimization.php:653
+#: includes/class-compressx-manual-optimization.php:654
+msgid "Saved"
+msgstr "Enregistré"
+
+#: includes/display/class-compressx-custom-media-lib.php:181
+msgid "CompressX: Unoptimized"
+msgstr "CompressX : non optimisé"
+
+#: includes/display/class-compressx-custom-media-lib.php:179
+msgid "CompressX: All images"
+msgstr "CompressX : toutes les images"
