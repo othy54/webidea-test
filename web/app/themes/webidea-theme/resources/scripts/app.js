@@ -1,12 +1,69 @@
 import domReady from '@roots/sage/client/dom-ready';
+import SplitType from 'split-type'
+import Lenis from 'lenis';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
-  const lenis = new Lenis({
+
+
+
+
+  // INIT LENIS
+
+  new Lenis({
     autoRaf: true,
   });
+
+  //SPLIT INIT + EFFET REVEAL
+
+  setTimeout(() => {
+    new SplitType('[split]', { types: 'lines, words' });
+
+    const texts = document.querySelectorAll('[split]');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.word').forEach((word, i) => {
+            word.animate([{ transform: 'translateY(0)', opacity: 1 }], {
+              duration: 500,
+              fill: 'forwards',
+              easing: 'ease-out',
+              delay: i * 25,
+            })
+          })
+          io.unobserve(entry.target);
+        }
+      })
+    })
+
+    texts.forEach((text) => {
+      io.observe(text);
+    })
+  }, 50)
+
+  // FADE UP EFFECT
+
+  const fadeUpEls = document.querySelectorAll('[fade-up]');
+
+  const ioFadeUp = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.animate([{ transform: 'translateY(0)', opacity: 1 }], {
+          duration: 500,
+          fill: 'forwards',
+          easing: 'ease-out',
+        })
+        ioFadeUp.unobserve(entry.target);
+      }
+    })
+  })
+
+  fadeUpEls.forEach((el) => {
+    ioFadeUp.observe(el);
+  })
 
   //HEADER JS
 
@@ -129,6 +186,8 @@ domReady(async () => {
   // Controle du slider
   const next = document.querySelector('.section-slider__next-btn');
   const prev = document.querySelector('.section-slider__prev-btn');
+  const nextMobile = document.querySelector('.section-slider__next-btn-mobile');
+  const prevMobile = document.querySelector('.section-slider__prev-btn-mobile');
 
   if (next) {
     next.addEventListener('click', () => {
@@ -138,6 +197,18 @@ domReady(async () => {
 
   if (prev) {
     prev.addEventListener('click', () => {
+      glide.go('<')
+    })
+  }
+
+  if (nextMobile) {
+    nextMobile.addEventListener('click', () => {
+      glide.go('>')
+    })
+  }
+
+  if (prevMobile) {
+    prevMobile.addEventListener('click', () => {
       glide.go('<')
     })
   }

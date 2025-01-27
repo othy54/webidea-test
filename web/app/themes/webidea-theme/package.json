@@ -24,6 +24,8 @@
     "@roots/sage": "6.24.0"
   },
   "dependencies": {
-    "@roots/bud-sass": "^6.24.0"
+    "@roots/bud-sass": "^6.24.0",
+    "lenis": "^1.1.20",
+    "split-type": "^0.3.4"
   }
 }

@@ -95,6 +95,8 @@
     }
 }
 
+// MEDIA QUERIES
+
 @mixin breakpoint($key) {
     @media (max-width: #{breakpoint($key)}) {
         @content;

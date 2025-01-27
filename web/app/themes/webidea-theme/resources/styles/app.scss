@@ -1,8 +1,9 @@
-@import 'variables';
 @import '_typography';
+@import 'normalize';
+@import 'variables';
 @import '_breakpoints.scss';
 @import 'mixins';
-@import url("https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css");
+@import "glide.core.min.css";
 
 * {
     font-synthesis: none;
@@ -157,6 +158,10 @@ span.secondary {
         align-items: flex-start;
         gap: 5px;
 
+        @include breakpoint(md) {
+            gap: 2px;
+        }
+
         &:before {
             content: '';
             display: inline-block;
@@ -164,6 +169,10 @@ span.secondary {
             aspect-ratio: 1;
             border: 1px solid $secondary-500;
             border-radius: 3px;
+
+            @include breakpoint(md) {
+                width: 40px;
+            }
         }
     }
 
@@ -555,6 +564,10 @@ nav {
         font-size: clamp(32px, 4vw, 64px)
     }
 
+    &__dot {
+        color: $primary-500;
+    }
+
     &__title,
     &__subtitle {
         color: white;
@@ -582,6 +595,11 @@ nav {
             padding-left: 20px;
         }
 
+        @include breakpoint(xl) {
+            gap: 10px;
+            padding-left: 20px;
+        }
+
         @supports (animation-timeline: view()) {
             animation: fade forwards;
             animation-timeline: view();
@@ -598,11 +616,23 @@ nav {
         @include breakpoint(md) {
             margin-left: 20px;
         }
+
+        @include breakpoint(xl) {
+            margin-left: 40px;
+        }
     }
 
     &__scroll-text {
         color: white;
         font-size: 18px;
+
+
+        @include breakpoint(xl) {
+            padding-left: 16px;
+            font-size: 14px;
+        }
+
+
     }
 }
 
@@ -634,6 +664,10 @@ nav {
 
     &__service-2 {
         margin-top: 160px;
+
+        @include breakpoint(md) {
+            margin-top: 120px;
+        }
     }
 
     &__content {
@@ -677,7 +711,7 @@ nav {
         padding-left: 24px;
         list-style-type: none;
 
-        &>li {
+        & li {
             margin-bottom: 12px;
             position: relative;
 
@@ -786,6 +820,31 @@ nav {
     &__prev-btn {
         transform: scaleX(-1);
     }
+
+    &__navigation-mobile {
+        grid-column: auto;
+        display: none;
+        gap: 10px;
+        align-items: flex-end;
+        display: none;
+        margin-top: 30px;
+
+        @include breakpoint(md) {
+            display: flex;
+        }
+    }
+
+    &__prev-btn-mobile,
+    &__next-btn-mobile {
+        border: 1px solid $secondary-500;
+        border-radius: 5px;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    &__prev-btn-mobile {
+        transform: scaleX(-1);
+    }
 }
 
 // SLIDER GLIDE
@@ -808,6 +867,10 @@ nav {
         align-items: flex-end;
         opacity: 0;
         translate: 5% 0;
+
+        @include breakpoint(lg) {
+            padding: 20px;
+        }
 
 
         &:active {
@@ -854,6 +917,10 @@ nav {
     &__slide-text {
         color: white;
         max-width: 366px;
+
+        @include breakpoint(lg) {
+            font-size: 14px;
+        }
     }
 
     &__slide-bottom {
@@ -869,15 +936,25 @@ nav {
             max-width: 32px;
             pointer-events: none;
         }
-
     }
 }
 
+.glide__slide--active {
+    @include breakpoint(md) {
+        &:before {
+            height: 35%;
+        }
+    }
+}
 
 // SECTION FORMULAIRE
 
 .section-form {
     margin-top: 160px;
+
+    @include breakpoint(md) {
+        margin-top: 120px;
+    }
 
     &__wrapper {
         display: grid;
@@ -886,6 +963,7 @@ nav {
 
         @include breakpoint(md) {
             grid-template-columns: repeat(3, 1fr);
+            gap: 28px 0;
         }
     }
 
@@ -895,6 +973,7 @@ nav {
         @include breakpoint(md) {
             grid-column: span 3;
         }
+
     }
 
     &__form {
@@ -914,7 +993,9 @@ nav {
             height: 2px;
             width: 100%;
             border: 0;
-            grid-column: span 6
+
+            grid-column: span 6;
+
         }
     }
 
@@ -945,6 +1026,11 @@ nav {
     background-color: $primary-600;
     margin-top: 160px;
     padding-block: 60px;
+
+
+    @include breakpoint(md) {
+        margin-top: 120px;
+    }
 
     &__wrapper {
         display: grid;
@@ -990,6 +1076,11 @@ nav {
         width: 100%;
         opacity: 0.3;
         border: 1px solid white;
+        display: none;
+
+        @include breakpoint(md) {
+            display: block;
+        }
     }
 
     &__copyright {
@@ -1022,6 +1113,12 @@ nav {
         & .separator {
             opacity: 0.3;
             margin-inline: 10px;
+        }
+
+        display: none;
+
+        @include breakpoint(md) {
+            display: flex;
         }
     }
 
@@ -1091,4 +1188,19 @@ nav {
         }
     }
 
+}
+
+// EFFET REVEAL AVEC SPLITTYPE
+
+.word {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+
+// EFFET FADE UP
+
+[fade-up] {
+    transform: translateY(50%);
+    opacity: 0;
 }
