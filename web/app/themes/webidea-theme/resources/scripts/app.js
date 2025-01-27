@@ -7,9 +7,6 @@ import Lenis from 'lenis';
  */
 domReady(async () => {
 
-
-
-
   // INIT LENIS
 
   new Lenis({
@@ -18,31 +15,29 @@ domReady(async () => {
 
   //SPLIT INIT + EFFET REVEAL
 
-  setTimeout(() => {
-    new SplitType('[split]', { types: 'lines, words' });
+  new SplitType('[split]', { types: 'lines, words' });
 
-    const texts = document.querySelectorAll('[split]');
+  const texts = document.querySelectorAll('[split]');
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.word').forEach((word, i) => {
-            word.animate([{ transform: 'translateY(0)', opacity: 1 }], {
-              duration: 500,
-              fill: 'forwards',
-              easing: 'ease-out',
-              delay: i * 25,
-            })
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.word').forEach((word, i) => {
+          word.animate([{ transform: 'translateY(0)', opacity: 1 }], {
+            duration: 500,
+            fill: 'forwards',
+            easing: 'ease-out',
+            delay: i * 15,
           })
-          io.unobserve(entry.target);
-        }
-      })
+        })
+        io.unobserve(entry.target);
+      }
     })
+  })
 
-    texts.forEach((text) => {
-      io.observe(text);
-    })
-  }, 50)
+  texts.forEach((text) => {
+    io.observe(text);
+  })
 
   // FADE UP EFFECT
 

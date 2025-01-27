@@ -4,9 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{--
-  <link rel="preload" href="@asset('fonts/Rubik-Variable.woff2')" as="font" type="font/woff2" crossorigin> --}}
-  {{-- <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script> --}}
+  <link rel="preload" href="@asset('fonts/Rubik-Variable.woff2')" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-display: swap;
+      font-family: 'Rubik';
+      src: url("{{ asset('fonts/Rubik-Variable.woff2') }}") format('woff2');
+      font-style: normal;
+    }
+  </style>
 
   @yield('head')
   {{-- @php(do_action('get_header')) --}}
